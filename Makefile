@@ -1,11 +1,11 @@
 CFLAGS=-std=c11 -Wall -g -static
 
-9cc: 9cc.c
+tuzcc: tuzcc.c
 
-test: 9cc
-        ./test.sh
+test: tuzcc
+		./test.sh
 
 clean:
-        rm -f 9cc *.o *~ tmp*
+		rm -f tuzcc *.o *~ tmp*
 
 .PHONY: test clean
