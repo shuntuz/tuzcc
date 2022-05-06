@@ -1,11 +1,12 @@
-CFLAGS=-std=c11 -Wall -g -static
+CFLAGS=-std=c11 -g -static
 
-tuzcc: tuzcc.c
+tuzcc: main.o
+	$(CC) -o $@ $? $(LDFLAGS)
 
 test: tuzcc
-		./test.sh
+	./test.sh
 
 clean:
-		rm -f tuzcc *.o *~ tmp*
+	rm -f tuzcc *.o *~ tmp*
 
 .PHONY: test clean
